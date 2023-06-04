@@ -29,21 +29,6 @@ const connection = () => {
   db.once("open", () => {
     console.log("Connected to MongoDB");
   });
-
-  async function registerAirport() {
-    Airport.deleteMany({})
-      .then((result) => {
-        if (result.deletedCount > 0) {
-          console.log("Airport deleted successfully");
-        } else {
-          console.log("Airport not found");
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting airport:", error);
-      });
-  }
-  registerAirport();
 };
 const port = 3030;
 
